@@ -31,7 +31,7 @@ export default function Footer() {
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3.5 select-none">
               <img
-                src="/src/assets/images/veloris_logo.png"
+                src="/images/veloris_logo.png"
                 alt="Véloris Logo"
                 className="w-11 h-11 rounded-full object-cover border border-rosegold-500/30"
                 referrerPolicy="no-referrer"

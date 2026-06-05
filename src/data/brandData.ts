@@ -13,7 +13,7 @@ export const PRODUCTS: Product[] = [
     priceAED: 950,
     color: 'matte-black',
     colorName: 'Matte Obsidian Black',
-    image: '/src/assets/images/obsidian_hoodie_1780663655152.png',
+    image: '/images/obsidian_hoodie_1780663655152.png',
     description: 'Our signature double-faced knit masterpiece. Meticulously spun from high-micron Italian cashmere and pure Egyptian organic cotton, providing an impossibly soft feel with high structural integrity.',
     materials: [
       '35% Italian Grade-A Cashmere',
@@ -35,7 +35,7 @@ export const PRODUCTS: Product[] = [
     priceAED: 800,
     color: 'alabaster-beige',
     colorName: 'Draped Alabaster Beige',
-    image: '/src/assets/images/alabaster_hoodie_1780663673134.png',
+    image: '/images/alabaster_hoodie_1780663673134.png',
     description: 'Designed as an ode to architectural draping. This piece features a heavier luxury knit with a beautiful natural drape, matching casual days with refined fine dining environments.',
     materials: [
       '40% Mongolian Cashmere',
@@ -57,7 +57,7 @@ export const PRODUCTS: Product[] = [
     priceAED: 680,
     color: 'mineral-grey',
     colorName: 'Mineral Charcoal Grey',
-    image: '/src/assets/images/charcoal_hoodie_1780663690584.png',
+    image: '/images/charcoal_hoodie_1780663690584.png',
     description: 'Named in honor of our architectural headquarters in the Dubai Design District (d3). A highly structured, technical knit engineered for modern entrepreneurs and jetsetters.',
     materials: [
       '30% Fine-knit Italian Cashmere',

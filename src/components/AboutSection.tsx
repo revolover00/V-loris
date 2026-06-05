@@ -45,7 +45,7 @@ export default function AboutSection() {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <img
-                  src="/src/assets/images/veloris_logo.png"
+                  src="/images/veloris_logo.png"
                   alt="Véloris Seal"
                   className="w-10 h-10 rounded-full object-cover border border-rosegold-400/50 shadow-sm"
                   referrerPolicy="no-referrer"

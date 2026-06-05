@@ -111,7 +111,7 @@ export default function App() {
 
               <div id="hero-campaign-card" className="w-full aspect-[4/5] bg-sand-200 relative overflow-hidden group border border-sand-200">
                 <img
-                  src="/src/assets/images/veloris_hero_campaign_1780663603419.png"
+                  src="/images/veloris_hero_campaign_1780663603419.png"
                   alt="Véloris Editorial High-Fashion Campaign Hoodie representation"
                   className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-1000 ease-out select-none"
                   referrerPolicy="no-referrer"

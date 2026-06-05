@@ -162,7 +162,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
                   <div className="border-t border-sand-200/50 pt-6">
                     <div className="flex items-center gap-2.5 mb-4 select-none">
                       <img
-                        src="/src/assets/images/veloris_logo.png"
+                        src="/images/veloris_logo.png"
                         alt="Véloris Logo"
                         className="w-6 h-6 rounded-full object-cover border border-rosegold-400"
                         referrerPolicy="no-referrer"
@@ -269,7 +269,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
                 >
                   <div className="relative mb-6 select-none flex items-center justify-center">
                     <img
-                      src="/src/assets/images/veloris_logo.png"
+                      src="/images/veloris_logo.png"
                       alt="Véloris Logo"
                       className="w-16 h-16 rounded-full object-cover border-2 border-rosegold-400 shadow-md p-0.5 bg-sand-50"
                       referrerPolicy="no-referrer"

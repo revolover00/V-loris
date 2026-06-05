@@ -45,7 +45,7 @@ export default function Header() {
             className="flex items-center gap-3 group text-sand-950 leading-none"
           >
             <img
-              src="/src/assets/images/veloris_logo.png"
+              src="/images/veloris_logo.png"
               alt="Véloris Logo"
               className="w-9 h-9 object-contain transition-all duration-300"
               referrerPolicy="no-referrer"
@@ -117,7 +117,7 @@ export default function Header() {
                 <div className="flex justify-between items-center mb-12">
                   <div className="flex items-center gap-2.5 tracking-[0.2em] text-sand-950 font-serif">
                     <img
-                      src="/src/assets/images/veloris_logo.png"
+                      src="/images/veloris_logo.png"
                       alt="Véloris Logo"
                       className="w-7 h-7 object-contain"
                       referrerPolicy="no-referrer"
