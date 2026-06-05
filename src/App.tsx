@@ -24,6 +24,19 @@ import { Product } from './types';
 export default function App() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
+  React.useEffect(() => {
+    const handleSelectProduct = (e: Event) => {
+      const customEvent = e as CustomEvent<string>;
+      const prodId = customEvent.detail;
+      const found = PRODUCTS.find((p) => p.id === prodId);
+      if (found) {
+        setSelectedProduct(found);
+      }
+    };
+    window.addEventListener('select-product', handleSelectProduct);
+    return () => window.removeEventListener('select-product', handleSelectProduct);
+  }, []);
+
   return (
     <div id="veloris-app" className="bg-sand-50 min-h-screen text-sand-950 flex flex-col font-sans selection:bg-rosegold-200 selection:text-sand-950 overflow-x-hidden antialiased">
       {/* Exquisite Sticky Header */}

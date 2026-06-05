@@ -13,17 +13,20 @@ export default function AboutSection() {
     {
       title: 'Ultimate Quality',
       desc: 'Each cashmere-organic fiber loop is individually monitored across multi-grade spinning machines before hands-on styling.',
-      icon: Sparkles
+      icon: Sparkles,
+      topicId: 'sourcing-certificate'
     },
     {
       title: 'Ethical Simplicity',
       desc: 'Sourcing strictly organic Egyptian farms and circular Mongolian cashmere raw supplies to preserve natural soils.',
-      icon: HeartHandshake
+      icon: HeartHandshake,
+      topicId: 'care-guide'
     },
     {
       title: 'Atelier Confidentiality',
       desc: 'Tailoring customized measurements and direct vault reserve experiences for collectors demanding strict privacy.',
-      icon: UserCheck
+      icon: UserCheck,
+      topicId: 'privacy'
     }
   ];
 
@@ -167,18 +170,26 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ delay: i * 0.15, duration: 0.5 }}
-                  className="p-8 bg-sand-50 border border-sand-200/50 hover:border-rosegold-300 transition-all duration-300 flex flex-col justify-between"
+                  onClick={() => {
+                    const tid = (v as any).topicId;
+                    if (tid) window.dispatchEvent(new CustomEvent('open-footer-topic', { detail: tid }));
+                  }}
+                  className="p-8 bg-sand-50 border border-sand-200/50 hover:border-rosegold-400 hover:shadow-lg transition-all duration-300 flex flex-col justify-between cursor-pointer group select-none"
                 >
                   <div className="space-y-4">
-                    <div className="w-10 h-10 rounded-full bg-rosegold-100 flex items-center justify-center text-rosegold-500 mb-6">
+                    <div className="w-10 h-10 rounded-full bg-rosegold-100 flex items-center justify-center text-rosegold-500 mb-6 group-hover:scale-105 transition-transform">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h4 className="font-serif text-base text-sand-950 font-semibold tracking-wide">
+                    <h4 className="font-serif text-base text-sand-950 font-semibold tracking-wide group-hover:text-rosegold-500 transition-colors">
                       {v.title}
                     </h4>
                     <p className="text-xs text-sand-400 leading-relaxed font-sans">
                       {v.desc}
                     </p>
+                  </div>
+                  <div className="mt-8 pt-4 border-t border-sand-200/50 flex justify-between items-center text-[9px] uppercase font-bold tracking-widest text-rosegold-500 group-hover:text-rosegold-600">
+                    <span>View Specifications</span>
+                    <span className="transform group-hover:translate-x-1.5 transition-transform">→</span>
                   </div>
                 </motion.div>
               );

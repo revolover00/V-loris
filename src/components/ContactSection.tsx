@@ -16,6 +16,59 @@ export default function ContactSection() {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [copiedHandle, setCopiedHandle] = useState<string | null>(null);
+
+  const handleCopyHandle = (handle: string) => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(handle);
+      setCopiedHandle(handle);
+      setTimeout(() => {
+        setCopiedHandle(null);
+      }, 2000);
+    }
+  };
+
+  React.useEffect(() => {
+    const handleConsultStylist = (e: Event) => {
+      const customEvent = e as CustomEvent<string>;
+      const topicName = customEvent.detail;
+      
+      let assignedSubject = 'General Inquiry';
+      if (
+        topicName.toLowerCase().includes('bespoke') || 
+        topicName.toLowerCase().includes('sourcing') || 
+        topicName.toLowerCase().includes('care') ||
+        topicName.toLowerCase().includes('certificate')
+      ) {
+        assignedSubject = 'Custom Bespoke Order';
+      } else if (
+        topicName.toLowerCase().includes('showroom') || 
+        topicName.toLowerCase().includes('vault') ||
+        topicName.toLowerCase().includes('registry')
+      ) {
+        assignedSubject = 'Celebrity / Athlete Fittings';
+      } else if (
+        topicName.toLowerCase().includes('gifting') || 
+        topicName.toLowerCase().includes('partnership')
+      ) {
+        assignedSubject = 'Strategic Partnership';
+      }
+
+      setFormData((prev) => ({
+        ...prev,
+        subject: assignedSubject,
+        message: `Hello Véloris Vault, I am initiating a private inquiry regarding:\n👉 ${topicName}\n\nPlease advise on customized availability or booking coordinates.`
+      }));
+
+      const section = document.getElementById('contact');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    window.addEventListener('consult-stylist', handleConsultStylist);
+    return () => window.removeEventListener('consult-stylist', handleConsultStylist);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -118,14 +171,17 @@ export default function ContactSection() {
               </h4>
               <div className="grid grid-cols-3 gap-4 text-xs">
                 {socialChannels.map((soc) => (
-                  <a
+                  <button
                     key={soc.name}
-                    href={soc.href}
-                    className="group space-y-1 flex flex-col hover:text-rosegold-500 transition-colors"
+                    onClick={() => handleCopyHandle(soc.handle)}
+                    className="group space-y-1 flex flex-col hover:text-rosegold-500 transition-colors bg-transparent border-none cursor-pointer text-left p-0 select-none outline-none"
+                    title="Click to copy handle"
                   >
                     <span className="font-semibold text-[10px] text-sand-900 group-hover:text-rosegold-500">{soc.name}</span>
-                    <span className="text-[11px] text-sand-400 font-mono tracking-tighter">{soc.handle}</span>
-                  </a>
+                    <span className={`text-[11px] font-mono tracking-tighter ${copiedHandle === soc.handle ? 'text-green-600 font-semibold' : 'text-sand-400'}`}>
+                      {copiedHandle === soc.handle ? '✓ Copied' : soc.handle}
+                    </span>
+                  </button>
                 ))}
               </div>
             </div>
