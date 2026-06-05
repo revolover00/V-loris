@@ -1,0 +1,6 @@
+{
+  "name": "Véloris - Luxury Hoodie Brand",
+  "description": "A luxury single-page website for the premium high-end hoodie brand Véloris.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
