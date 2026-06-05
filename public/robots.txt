@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Allow: /images/
+
+# Host
+Host: https://veloris-compny.vercel.app
+
+# Sitemaps
+Sitemap: https://veloris-compny.vercel.app/sitemap.xml
